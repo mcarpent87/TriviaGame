@@ -8,7 +8,7 @@ $(document).ready(function(){
   })
   
   var trivia = {
-    // trivia properties
+    // trivia game properties
     correct: 0,
     incorrect: 0,
     unanswered: 0,
@@ -16,7 +16,7 @@ $(document).ready(function(){
     timer: 20,
     timerOn: false,
     timerId : '',
-    // questions options and answers data
+    // questions, answer choices and answers data
     questions: {
       q1: 'Which infinity Stone did Thanos recover from the planet Xandar?',
       q2: 'Which Avenger posesses the time stone?',
@@ -24,16 +24,22 @@ $(document).ready(function(){
       q4: 'The mark 50 iron man suit created and donned by Tony Stark uses what technology?',
       q5: 'What is the name of the weapon forged for Thor on Nidavellir?',
       q6: 'Who secretly had posession of the space stone?',
-      q7: "Thanos wants to balance the universe by wiping out how much of life in the universe?"
+      q7: 'Thanos wants to balance the universe by wiping out how much of life in the universe?',
+      q8: 'Infinity War centers around the Infinity Stones. How many are on Earth at the beginning of the movie?',
+      q9: 'What kind of being is Thanos?',
+      q10:'Where is the Soul Stone located?'
     },
     options: {
       q1: ['Space Stone', 'Power Stone', 'Soul Stone', 'Mind Stone'],
       q2: ['Iron Man', 'Vision', 'Dr. Strange', 'Thor'],
       q3: ['Nebula', 'Star Lord', 'Gamora', 'Tony Stark'],
-      q4: ['Micro tech', 'Macro tech', 'Nano tech', 'Vibranium'],
+      q4: ['Micro tech', 'Macro tech', 'Nano Tech', 'Vibranium'],
       q5: ['Mjolnir','Stormbreaker','Windbreaker','God Killer'],
       q6: ['Loki','Thor','Hela', 'Bruce Banner'],
-      q7: ['A Half', 'A Quarter', 'One-Third','All']
+      q7: ['A Half', 'A Quarter', 'One-Third','All'],
+      q8: ['1','2','3','5'],
+      q9: ['A Titan', 'A Beyonder', 'Demigod', 'Watcher'],
+      q10:['Knowhere', 'Vormir', 'Ego', 'Contraxia']
     },
     answers: {
       q1: 'Power Stone',
@@ -42,7 +48,10 @@ $(document).ready(function(){
       q4: 'Nano Tech',
       q5: 'Stormbreaker',
       q6: 'Loki',
-      q7: 'A Half'
+      q7: 'A Half',
+      q8: '2',
+      q9: 'A Titan',
+      q10: 'Vormir'
     },
     // trivia methods
     // method to initialize game
@@ -75,8 +84,8 @@ $(document).ready(function(){
     // method to loop through and display questions and options 
     nextQuestion : function(){
       
-      // set timer to 20 seconds each question
-      trivia.timer = 10;
+      // set timer to 30 seconds each question
+      trivia.timer = 30;
        $('#timer').removeClass('last-seconds');
       $('#timer').text(trivia.timer);
       
@@ -94,19 +103,16 @@ $(document).ready(function(){
       
       // creates all the trivia guess options in the html
       $.each(questionOptions, function(index, key){
-        $('#options').append($('<button class="option btn btn-info btn-lg">'+key+'</button>'));
+        $('#options').append($('<button class="option btn btn-info">'+key+'</button>'));
       })
       
     },
-    // method to decrement counter and count unanswered if timer runs out
+    // Function for the question timer
     timerRunning : function(){
       // if timer still has time left and there are still questions left to ask
       if(trivia.timer > -1 && trivia.currentSet < Object.keys(trivia.questions).length){
         $('#timer').text(trivia.timer);
         trivia.timer--;
-          if(trivia.timer === 4){
-            $('#timer').addClass('last-seconds');
-          }
       }
       // the time has run out and increment unanswered, run result
       else if(trivia.timer === -1){
@@ -118,14 +124,19 @@ $(document).ready(function(){
       }
       // if all the questions have been shown end the game, show results
       else if(trivia.currentSet === Object.keys(trivia.questions).length){
+      
+      //Calculate the % of correct answers to display at the end of the game
+        var percent_correct = ((trivia.correct/10)*100);
+        var rounded = percent_correct.toFixed();
         
-        // adds results of game (correct, incorrect, unanswered) to the page
+      // adds results of game (correct, incorrect, unanswered) to the page
         $('#results')
-          .html('<h3>Thank you for playing!</h3>'+
+          .html('<h3>Thanks for playing!</h3>'+
           '<p>Correct: '+ trivia.correct +'</p>'+
           '<p>Incorrect: '+ trivia.incorrect +'</p>'+
-          '<p>Unaswered: '+ trivia.unanswered +'</p>'+
-          '<p>Please play again!</p>');
+          '<p>Unanswered: '+ trivia.unanswered +'</p>'+
+          '<p> Percent Correct: '+ rounded + '%' + '</p>'+
+          '<p>Try Again!</p>');
         
         // hide game sction
         $('#game').hide();
@@ -146,7 +157,7 @@ $(document).ready(function(){
       
       // if the text of the option picked matches the answer of the current question, increment correct
       if($(this).text() === currentAnswer){
-        // turn button green for correct
+        // Clicked button turns green if the correct answer is chosen
         $(this).addClass('btn-success').removeClass('btn-info');
         
         trivia.correct++;
@@ -156,7 +167,7 @@ $(document).ready(function(){
       }
       // else the user picked the wrong option, increment incorrect
       else{
-        // turn button clicked red for incorrect
+        // Clicked button turns red if the wrong answer was selected
         $(this).addClass('btn-danger').removeClass('btn-info');
         
         trivia.incorrect++;
@@ -166,17 +177,17 @@ $(document).ready(function(){
       }
       
     },
-    // method to remove previous question results and options
+    // Move from previous question to next question
     guessResult : function(){
       
-      // increment to next question set
+      // increment to next question in the set 
       trivia.currentSet++;
       
-      // remove the options and results
+      // remove the answer choices and results
       $('.option').remove();
       $('#results h3').remove();
       
-      // begin next question
+      // Move to the next question
       trivia.nextQuestion();
        
     }

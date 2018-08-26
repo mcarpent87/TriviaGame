@@ -1,8 +1,7 @@
 body {
-	background-image: url(./images/bab.png);
-	position: relative;
-	right: 50px;
-    
+	background-image: url(./images/IW_background.jpg);
+	background-position: center;
+	   
 }
 
 button {
@@ -25,11 +24,82 @@ button:hover {
 	margin: 0 auto;
 }
 
+.row div {
+	position: relative;
+	right: -100px;  
+}
+
 img {
 	height: 200px;
 	width: auto;
 }
 
-h1, h2, h3, .question {
-	text-align: center;
+h1 {
+	background: rgb(75, 1, 75);
+	padding: 20px;
+	border-radius: 5px;
+	font-family: 'Holtwood One SC', serif;
+	color: goldenrod;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.option.btn.btn-info {
+	background-color: goldenrod !important;
+	color: black;
+	width: 400px; 
+	font-weight: bold; 
+	font-size: 20px; 
+	position: relative;
+	right: 50px; 
+	
+}
+
+.btn-success {
+	color: black;
+	width: 400px; 
+	font-weight: bold; 
+	font-size: 20px; 
+	position: relative;
+	right: 50px; 
+}
+
+.btn-danger {
+	color: black;
+	width: 400px; 
+	font-weight: bold; 
+	font-size: 20px; 
+	position: relative;
+	right: 50px;
+}
+
+.btn-lg {
+width: 600px; 
+background-color: goldenrod;
+font-weight: bold;
+}
+
+.btn-danger {
+	color: black;
+	width: 400px; 
+	font-weight: bold; 
+	font-size: 20px; 
+	position: relative;
+	right: 50px;
+}
+
+h3 {
+	font-family: 'Domine', serif;
+	color: goldenrod;
+	font-weight:bold; 
+}
+.jumbotron {
+	background: rgb(75, 1, 75);
+}
+
+p {
+	color: goldenrod;
+	font-weight: bold;
+	font-family: 'Domine', serif;
+
 }
