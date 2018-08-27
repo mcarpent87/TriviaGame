@@ -1,7 +1,8 @@
 body {
 	background-image: url(./images/IW_background.jpg);
 	background-position: center;
-	   
+	position: relative;
+	top: 150px;
 }
 
 button {
@@ -51,7 +52,7 @@ h1 {
 	font-weight: bold; 
 	font-size: 20px; 
 	position: relative;
-	right: 50px; 
+	right: -50px; 
 	
 }
 
@@ -61,7 +62,7 @@ h1 {
 	font-weight: bold; 
 	font-size: 20px; 
 	position: relative;
-	right: 50px; 
+	right: -50px; 
 }
 
 .btn-danger {
@@ -70,23 +71,18 @@ h1 {
 	font-weight: bold; 
 	font-size: 20px; 
 	position: relative;
-	right: 50px;
+	right: -50px;
 }
 
 .btn-lg {
 width: 600px; 
 background-color: goldenrod;
 font-weight: bold;
+position: relative;
+right: -80px; 
 }
 
-.btn-danger {
-	color: black;
-	width: 400px; 
-	font-weight: bold; 
-	font-size: 20px; 
-	position: relative;
-	right: 50px;
-}
+
 
 h3 {
 	font-family: 'Domine', serif;
@@ -95,11 +91,17 @@ h3 {
 }
 .jumbotron {
 	background: rgb(75, 1, 75);
+	border-radius: 5px; 
 }
 
 p {
 	color: goldenrod;
 	font-weight: bold;
-	font-family: 'Domine', serif;
+	font-family: Arial, Helvetica, sans-serif;
 
 }
+
+.container {
+	text-align: center;
+}
+

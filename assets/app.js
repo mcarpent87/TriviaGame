@@ -3,10 +3,13 @@ $(document).ready(function(){
     // event listeners
     $("#remaining-time").hide();
     $("#start").on('click', trivia.startGame);
+    $("#restart").on('click', trivia.restartGame);
     $(document).on('click' , '.option', trivia.guessChecker);
     
   })
   
+  //hide restart button
+  $("#restart").hide();
   var trivia = {
     // trivia game properties
     correct: 0,
@@ -54,9 +57,9 @@ $(document).ready(function(){
       q10: 'Vormir'
     },
     // trivia methods
-    // method to initialize game
+    // Start game
     startGame: function(){
-      // restarting game results
+      // start game results
       trivia.currentSet = 0;
       trivia.correct = 0;
       trivia.incorrect = 0;
@@ -74,6 +77,33 @@ $(document).ready(function(){
       
       // remove start button
       $('#start').hide();
+  
+      $('#remaining-time').show();
+      
+      // ask first question
+      trivia.nextQuestion();
+      
+    },
+
+    restartGame: function(){
+      // start game results
+      trivia.currentSet = 0;
+      trivia.correct = 0;
+      trivia.incorrect = 0;
+      trivia.unanswered = 0;
+      clearInterval(trivia.timerId);
+      
+      // show game section
+      $('#game').show();
+      
+      //  empty last results
+      $('#results').html('');
+      
+      // show timer
+      $('#timer').text(trivia.timer);
+      
+      // remove restart button
+      $('#restart').hide();
   
       $('#remaining-time').show();
       
@@ -142,7 +172,7 @@ $(document).ready(function(){
         $('#game').hide();
         
         // show start button to begin a new game
-        $('#start').show();
+        $('#restart').show();
       }
       
     },
