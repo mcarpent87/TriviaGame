@@ -1,6 +1,11 @@
+.answers div {
+	margin: 0 auto;
+}
+
 body {
 	background-image: url(./images/IW_background.jpg);
-	background-position: center;
+	background-repeat: no-repeat;
+	background-position: center top;
 	position: relative;
 	top: 150px;
 }
@@ -21,13 +26,59 @@ button:hover {
 	color: white;
 }
 
-.answers div {
-	margin: 0 auto;
+
+.btn-success {
+	color: black;
+	width: 400px; 
+	font-weight: bold; 
+	font-size: 20px; 
+	position: relative;
+	right: -50px; 
+	font-family: 'Permanent Marker', cursive;
 }
 
-.row div {
+.btn-danger {
+	color: black;
+	width: 400px; 
+	font-weight: bold; 
+	font-size: 20px; 
 	position: relative;
-	right: -100px;  
+	right: -50px;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.btn-lg {
+	width: 600px; 
+	background-color: goldenrod;
+	font-weight: bold;
+	position: relative;
+	right: -80px; 
+	font-family: 'Permanent Marker', cursive;
+}
+
+.container {
+	text-align: center;
+}
+
+
+h1 {
+	background: rgb(116, 1, 116);
+	padding: 20px;
+	border: goldenrod 2px solid;
+	border-radius: 5px;
+	font-family: 'Permanent Marker', cursive;
+	color: goldenrod;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+h3 {
+	font-family: 'Permanent Marker', cursive;
+	color: goldenrod;
+	font-weight: bold; 
+	-webkit-text-stroke-width: .5px;
+	-webkit-text-stroke-color: black;
+	font-size: 28px; 
 }
 
 img {
@@ -35,14 +86,14 @@ img {
 	width: auto;
 }
 
-h1 {
-	background: rgb(75, 1, 75);
-	padding: 20px;
-	border-radius: 5px;
-	font-family: 'Holtwood One SC', serif;
-	color: goldenrod;
-	-webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+.jumbotron {
+	background: rgb(116, 1, 116);
+	border-radius: 5px; 
+	border: goldenrod 2px solid;
+}
+
+.lead {
+	font-size: 28px; 
 }
 
 .option.btn.btn-info {
@@ -53,55 +104,29 @@ h1 {
 	font-size: 20px; 
 	position: relative;
 	right: -50px; 
+	font-family: 'Permanent Marker', cursive;
 	
-}
-
-.btn-success {
-	color: black;
-	width: 400px; 
-	font-weight: bold; 
-	font-size: 20px; 
-	position: relative;
-	right: -50px; 
-}
-
-.btn-danger {
-	color: black;
-	width: 400px; 
-	font-weight: bold; 
-	font-size: 20px; 
-	position: relative;
-	right: -50px;
-}
-
-.btn-lg {
-width: 600px; 
-background-color: goldenrod;
-font-weight: bold;
-position: relative;
-right: -80px; 
-}
-
-
-
-h3 {
-	font-family: 'Domine', serif;
-	color: goldenrod;
-	font-weight:bold; 
-}
-.jumbotron {
-	background: rgb(75, 1, 75);
-	border-radius: 5px; 
 }
 
 p {
 	color: goldenrod;
 	font-weight: bold;
-	font-family: Arial, Helvetica, sans-serif;
-
+	font-family: 'Permanent Marker', cursive;
+	font-size: 24px; 
+	-webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: black;
+	
 }
 
-.container {
-	text-align: center;
+
+#restart.btn-lg {
+	position: relative;
+	right: -100px; 
+	font-family: 'Permanent Marker', cursive;
 }
 
+
+.row div {
+	position: relative;
+	right: -100px;  
+}

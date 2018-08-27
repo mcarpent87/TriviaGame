@@ -23,11 +23,11 @@ $(document).ready(function(){
     questions: {
       q1: 'Which infinity Stone did Thanos recover from the planet Xandar?',
       q2: 'Which Avenger posesses the time stone?',
-      q3: 'Who did Thanos sacrifice to recover the soul stone?',
-      q4: 'The mark 50 iron man suit created and donned by Tony Stark uses what technology?',
+      q3: 'Who did Thanos sacrifice to obatin the soul stone?',
+      q4: 'The mark L iron man suit created and donned by Tony Stark uses what technology?',
       q5: 'What is the name of the weapon forged for Thor on Nidavellir?',
       q6: 'Who secretly had posession of the space stone?',
-      q7: 'Thanos wants to balance the universe by wiping out how much of life in the universe?',
+      q7: 'Thanos wanted to bring balance by wiping out what amount of life in the universe?',
       q8: 'Infinity War centers around the Infinity Stones. How many are on Earth at the beginning of the movie?',
       q9: 'What kind of being is Thanos?',
       q10:'Where is the Soul Stone located?'
@@ -36,10 +36,10 @@ $(document).ready(function(){
       q1: ['Space Stone', 'Power Stone', 'Soul Stone', 'Mind Stone'],
       q2: ['Iron Man', 'Vision', 'Dr. Strange', 'Thor'],
       q3: ['Nebula', 'Star Lord', 'Gamora', 'Tony Stark'],
-      q4: ['Micro tech', 'Macro tech', 'Nano Tech', 'Vibranium'],
+      q4: ['Microtech', 'Macrotech', 'Nanotech', 'Vibranium'],
       q5: ['Mjolnir','Stormbreaker','Windbreaker','God Killer'],
       q6: ['Loki','Thor','Hela', 'Bruce Banner'],
-      q7: ['A Half', 'A Quarter', 'One-Third','All'],
+      q7: ['One-Half', 'One-Quarter', 'One-Third','All'],
       q8: ['1','2','3','5'],
       q9: ['A Titan', 'A Beyonder', 'Demigod', 'Watcher'],
       q10:['Knowhere', 'Vormir', 'Ego', 'Contraxia']
@@ -48,10 +48,10 @@ $(document).ready(function(){
       q1: 'Power Stone',
       q2: 'Dr. Strange',
       q3: 'Gamora',
-      q4: 'Nano Tech',
+      q4: 'Nanotech',
       q5: 'Stormbreaker',
       q6: 'Loki',
-      q7: 'A Half',
+      q7: 'One-Half',
       q8: '2',
       q9: 'A Titan',
       q10: 'Vormir'
@@ -165,8 +165,7 @@ $(document).ready(function(){
           '<p>Correct: '+ trivia.correct +'</p>'+
           '<p>Incorrect: '+ trivia.incorrect +'</p>'+
           '<p>Unanswered: '+ trivia.unanswered +'</p>'+
-          '<p> Percent Correct: '+ rounded + '%' + '</p>'+
-          '<p>Try Again!</p>');
+          '<p> Percent Correct: '+ rounded + '%' + '</p>');
         
         // hide game sction
         $('#game').hide();
