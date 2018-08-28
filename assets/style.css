@@ -21,12 +21,13 @@ button.answerchoice {
 	display: none;
 }
 
+/*Color of button is blue when the mouse hovers over it*/
 button:hover {
 	background-color: blue;
 	color: white;
 }
 
-
+/*Style of button when a correct answer is chosen*/
 .btn-success {
 	color: black;
 	width: 400px; 
@@ -36,7 +37,7 @@ button:hover {
 	right: -50px; 
 	font-family: 'Permanent Marker', cursive;
 }
-
+/*Style of button when an incorrect answer is chosen*/
 .btn-danger {
 	color: black;
 	width: 400px; 
@@ -46,7 +47,7 @@ button:hover {
 	right: -50px;
 	font-family: 'Permanent Marker', cursive;
 }
-
+/*Styling for the various buttons in the game*/
 .btn-lg {
 	width: 600px; 
 	background-color: goldenrod;
@@ -56,11 +57,22 @@ button:hover {
 	font-family: 'Permanent Marker', cursive;
 }
 
+.btn-lg:hover {
+	background-color: blue;
+	color: white;
+}
+
+.option.btn.btn-info:hover {
+	background-color: blue;
+	color: white;
+}
+
+/*Text alignment in the container*/
 .container {
 	text-align: center;
 }
 
-
+/*Styling for head tags*/
 h1 {
 	background: rgb(116, 1, 116);
 	padding: 20px;
@@ -69,7 +81,7 @@ h1 {
 	font-family: 'Permanent Marker', cursive;
 	color: goldenrod;
 	-webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+	-webkit-text-stroke-color: black;
 }
 
 h3 {
@@ -81,11 +93,7 @@ h3 {
 	font-size: 28px; 
 }
 
-img {
-	height: 200px;
-	width: auto;
-}
-
+/*Style jumbotron ie main section of the game*/
 .jumbotron {
 	background: rgb(116, 1, 116);
 	border-radius: 5px; 
@@ -95,9 +103,9 @@ img {
 .lead {
 	font-size: 28px; 
 }
-
+/*Style game buttons*/
 .option.btn.btn-info {
-	background-color: goldenrod !important;
+	background-color: goldenrod;
 	color: black;
 	width: 400px; 
 	font-weight: bold; 
@@ -107,7 +115,7 @@ img {
 	font-family: 'Permanent Marker', cursive;
 	
 }
-
+/*Style p tags*/
 p {
 	color: goldenrod;
 	font-weight: bold;
@@ -118,14 +126,14 @@ p {
 	
 }
 
-
+/*Style restart button at the end of the game*/
 #restart.btn-lg {
 	position: relative;
 	right: -100px; 
 	font-family: 'Permanent Marker', cursive;
 }
 
-
+/*Additional positioning*/
 .row div {
 	position: relative;
 	right: -100px;  

@@ -114,8 +114,8 @@ $(document).ready(function(){
     // method to loop through and display questions and options 
     nextQuestion : function(){
       
-      // set timer to 30 seconds each question
-      trivia.timer = 30;
+      // set timer to 15 seconds each question
+      trivia.timer = 15;
        $('#timer').removeClass('last-seconds');
       $('#timer').text(trivia.timer);
       
@@ -159,7 +159,7 @@ $(document).ready(function(){
         var percent_correct = ((trivia.correct/10)*100);
         var rounded = percent_correct.toFixed();
         
-      // adds results of game (correct, incorrect, unanswered) to the page
+      // adds results of game (correct, incorrect, unanswered) to the html page
         $('#results')
           .html('<h3>Thanks for playing!</h3>'+
           '<p>Correct: '+ trivia.correct +'</p>'+
@@ -170,12 +170,11 @@ $(document).ready(function(){
         // hide game sction
         $('#game').hide();
         
-        // show start button to begin a new game
+        // show restart button to begin a new game
         $('#restart').show();
       }
-      
     },
-    // method to evaluate the option clicked
+    // Evaluate the answer choice chosen
     guessChecker : function() {
       
       // timer ID for gameResult setTimeout
@@ -184,7 +183,7 @@ $(document).ready(function(){
       // the answer to the current question being asked
       var currentAnswer = Object.values(trivia.answers)[trivia.currentSet];
       
-      // if the text of the option picked matches the answer of the current question, increment correct
+      // if the text of the option picked matches the answer of the current question, add to correct answer count
       if($(this).text() === currentAnswer){
         // Clicked button turns green if the correct answer is chosen
         $(this).addClass('btn-success').removeClass('btn-info');
@@ -194,7 +193,7 @@ $(document).ready(function(){
         resultId = setTimeout(trivia.guessResult, 1000);
         $('#results').html('<h3>Correct Answer!</h3>');
       }
-      // else the user picked the wrong option, increment incorrect
+      // else the user picked the wrong option, add to incorrect answer count
       else{
         // Clicked button turns red if the wrong answer was selected
         $(this).addClass('btn-danger').removeClass('btn-info');
